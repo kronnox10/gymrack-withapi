@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User</title>
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <script src="../../Js/login2.js"></script>
+  <script src="../../Js/bootstrap.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="shortcut icon" href="../../img/249187.png">
+</head>
+<script>iniciar()</script>
+
+<body class="bg-light" >
+  <header class="bg-dark bg-opacity-75">
+    <div class="row py-3 fs-3">
+      <div class="col-lg-4  col-6 col-md-4 col-sm-4 col-xl-4    text-white ps-5">
+        GymRack
+      </div>
+      <div class="col-lg-8 col-6  col-md-8 col-sm-8 col-xl-8 text-end fs-5 text-white pe-5">
+        <a href="../Login.html" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#RModal">Cerrar
+          Sesion</a>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-lg  bg-orange px-2 fs-5 ">
+      <div class="container-fluid">
+        <a class="  navbar-brand mx-2 px-4 nav-link active" href="user-trainer.html">Entrenador</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active mx-2 px-4" aria-current="page" href="user-valor.html">Valoracion</a>
+            </li>
+            <li class="nav-item mx-2 px-4">
+              <a class="nav-link active " href="Tus actividades.html">Tus actividades</a>
+            </li>
+            <li class="nav-item mx-2 px-5">
+              <a class="nav-link active " href="datos.html">Datos generales</a>
+            </li>
+            <li class="nav-item mx-2 px-5">
+              <a class="nav-link active " href="user_estadisticas.html">Ver estadisticas</a>
+            </li>
+            <li class="nav-item mx-2 px-5">
+              <a class="nav-link active " href="rsesión.html">Registrar sesion</a>
+            </li>
+            <li class="nav-item mx-3 px-5">
+              <a class="nav-link active " href="user-ubicaciones.html">Mapas</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <hr>
+  </header>
+
+  <div class="container">
+
+    <div class="mt-5">
+    </div>
+
+    <!--<table id="tablaentrenador" class="table" style="width: 100%"> style="width:100%"
+      
+      <thead>
+        <tr class="text-light">
+          <th><b>id</b></th>
+          <th><b>Nombre</b></th>
+          <th><b>direccion</b></th>
+          <th><b>correo</b></th>
+        </tr>
+      </thead>
+    </table>-->
+  </div>
+
+
+  <div class="container mt-5">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <div class="row col-12 mb-2">
+        <h3>Opciones de usuario</h3>
+      </div>
+      <button class="nav-link  btn btn-success" id="nav-estadisticas-tab" data-bs-toggle="tab"
+        data-bs-target="#nav-nuevo" type="button" role="tab" aria-controls="nav-nuevo" aria-selected="false"
+        onclick="listaEntrenadorSiguiente()">Lista de
+        entrenadores </button>
+
+
+      <button class="nav-link  btn btn-success" id="nav-listado-tab" data-bs-toggle="tab" data-bs-target="#nav-soli"
+        type="button" role="tab" aria-controls="nav-soli" aria-selected="false"
+        onclick="entrenador_aceptado()">Mi entrenador</button>
+
+
+    </div>
+
+
+    <div class="tab-pane fade active " id="nav-nuevo" role="tabpanel">
+      <div class="row">
+
+        <div class="col-lg-4 px-2  ">
+          <div class="card border-dark shadow " style="width: auto;">
+            <div class="card-body">
+
+              <h5 class="card-title"><b>Nombre del contacto</b></h5>
+              <img id="imagenEntrenador" src="" style="width: 380px; height: 220px;">
+
+              <div class="row">
+                <div class="col-lg-3">
+                  <p class="card-text "><b>Nombre:</b></p>
+                </div>
+                <div id="nombre" class="col-lg-9   text-start"></div>
+              </div>
+
+              <div class="row pt-3">
+                <div class="col-lg-3">
+                  <p class="card-text"><b>Direccion:</b></p>
+                </div>
+                <div id="Direccion" class="col-lg-9"></div>
+              </div>
+
+              <div class="row pt-3">
+                <div class="col-lg-3">
+                  <p class="card-text"><b>Correo:</b></p>
+                </div>
+                <div id="Correo" class="col-lg-9"></div>
+              </div>
+
+              <div class="row pt-3">
+                <div class="col-lg-7">
+                  <p class="card-text"><b>Valoracion:</b></p>
+                  <span class="fs-3" style="cursor:pointer;" id="1estrella1">&#9733</span>
+
+                  <span class="fs-3"  style="cursor:pointer;" id="2estrella1">&#9733</span>
+
+                  <span class="fs-3"  style="cursor:pointer;" id="3estrella1">&#9733</span>
+
+                  <span class="fs-3"  style="cursor:pointer;" id="4estrella1">&#9733</span>
+
+                  <span class="fs-3"  style="cursor:pointer;" id="5estrella1">&#9733</span>
+                </div>
+                <div id="Valoracion" class="col-lg-9"></div>
+              </div>
+
+              <div class="row pt-3">
+                <div class="col-lg-3">
+                  <p class="card-text"><b>Opcion:</b></p>
+                </div>
+                <div id="Estado" class="col-lg-9"></div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="col-lg-4 px-2 ">
+          <div class="card border-dark shadow " style="width: auto;">
+            <div class="card-body">
+
+              <h5 class="card-title"><b>Nombre del contacto</b></h5>
+              <img id="imagenEntrenador2" src="" style="width: 380px; height: 220px">
+
+              <div class="row">
+                <div class="col-lg-3">
+                  <p class="card-text "><b>Nombre:</b></p>
+                </div>
+                <div id="nombre2" class="col-lg-9   text-start"></div>
+              </div>
+
+              <div class="row pt-3">
+                <div class="col-lg-3">
+                  <p class="card-text"><b>Direccion:</b></p>
+                </div>
+                <div id="Direccion2" class="col-lg-9"></div>
+              </div>
+
+              <div class="row pt-3">
+                <div class="col-lg-3">
+                  <p class="card-text"><b>Correo:</b></p>
+                </div>
+                <div id="Correo2" class="col-lg-9"></div>
+              </div>
+
+
+              <div class="row pt-3">
+                <div class="col-lg-7">
+                  <p class="card-text"><b>Valoracion:</b></p >
+                  <span class="fs-3"   style="cursor:pointer;" id="1estrella2" >&#9733</span>
+
+                  <span class="fs-3" style="cursor:pointer;" id="2estrella2">&#9733</span>
+
+                  <span class="fs-3"  style="cursor:pointer;" id="3estrella2">&#9733</span>
+
+                  <span class="fs-3"  style="cursor:pointer;" id="4estrella2">&#9733</span>
+
+                  <span class="fs-3"  style="cursor:pointer;" id="5estrella2">&#9733</span>
+                </div>
+                <div id="Valoracion2" class="col-lg-9"></div>
+              </div>
+
+              <div class="row pt-3">
+                <div class="col-lg-3">
+                  <p class="card-text"><b>Opcion:</b></p>
+                </div>
+                <div id="Estado2" class="col-lg-9"></div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="col-lg-4 px-2  ">
+          <div class="card border-dark shadow " style="width: auto;">
+            <div class="card-body">
+
+              <h5 class="card-title"><b>Nombre del contacto</b></h5>
+              <img id="imagenEntrenador3" src="" style="width: 380px; height: 220px;">
+
+              <div class="row">
+                <div class="col-lg-3">
+                  <p class="card-text "><b>Nombre:</b></p>
+                </div>
+                <div id="nombre3" class="col-lg-9   text-start"></div>
+              </div>
+
+
+              <div class="row pt-3">
+                <div class="col-lg-3">
+                  <p class="card-text"><b>Direccion:</b></p>
+                </div>
+                <div id="Direccion3" class="col-lg-9"></div>
+              </div>
+
+              <div class="row pt-3">
+                <div class="col-lg-3">
+                  <p class="card-text"><b>Correo:</b></p>
+                </div>
+                <div id="Correo3" class="col-lg-9"></div>
+              </div>
+
+              <div class="row pt-3">
+                <div class="col-lg-7">
+                  <p class="card-text"><b>Valoracion:</b></p>
+                  <span class="fs-3" style="cursor:pointer;" id="1estrella3">&#9733</span>
+
+                  <span class="fs-3"  style="cursor:pointer;" id="2estrella3">&#9733</span>
+
+                  <span class="fs-3"  style="cursor:pointer;" id="3estrella3">&#9733</span>
+
+                  <span class="fs-3"  style="cursor:pointer;" id="4estrella3">&#9733</span>
+
+                  <span class="fs-3"  style="cursor:pointer;" id="5estrella3">&#9733</span>
+                </div>
+                <div id="Valoracion3" class="col-lg-9"></div>
+              </div>
+
+              <div class="row pt-3">
+                <div class="col-lg-3">
+                  <p class="card-text"><b>Opcion:</b></p>
+                </div>
+                <div id="Estado3" class="col-lg-9"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-lg-6"><a class="mx-5  mt-5 btn btn-outline-orange"
+            onclick="listaEntrenadorAnterior()">Anterior</a></div>
+
+        <div class="text-end col-lg-6 px-5"><a class="mt-5 btn btn-outline-orange"
+            onclick="listaEntrenadorSiguiente()">Siguiente</a></div>
+      </div>
+    </div>
+    <!--Hasta aqui llega el div que muestra los entrenadores-->
+
+    <div class="tab-pane fade active " id="nav-soli" role="tabpanel" aria-labelledby="nav-listado-tab">
+      <table id="tablaSolicitud" class=" table table-striped table-hover" style="width:100%">
+        <thead>
+          <tr>
+            <th><b>id</b></th>
+            <th><b>nombre</b></th>
+            <th><b>estado</b></th>
+            <th><b>correo</b></th>
+            <th><b>Valoracion</b></th>
+<!-- EY WHASA-->
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="modal fade" id="modal-enviar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Enviando solicitud...</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ¿Seguro que quieres enviarle solicitud a este entrenador?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="enviada()">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="../../Js/buscar.js"></script>
+    <script src="../../Js/registro.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <script src="js/bootstrap.min.js"></script><!--Este boostrap  tiene lo del modal-->
+  </div>
+
+
+  <!--
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-12 col-xl-6">
+        <img src="../../img/gymrack.png">
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-sm-6 col-12 text-white">
+        <form>
+          <div><label for="">Nombre completo</label>
+            <input type="textarea" id="" readonly class="form-control my-2">
+          </div>
+
+          <div class=""><label for="">Especialidad</label>
+            <input type="text" id="" readonly class="form-control my-2">
+          </div>
+
+          <div><label for="">Dias disponible</label>
+            <input type="text" id="" readonly class="form-control my-2">
+          </div>
+
+          <div><label for="">Horario de trabajo</label>
+            <input type="text" id="" readonly class="form-control my-2">
+          </div>
+          <div><label for="">Descripcion</label>
+            <input type="text" id="" readonly class="form-control py-5">
+          </div>
+
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+
+-->
+
+</body>
+
+
+
+<div class="modal fade" id="RModal" tabindex="-1" aria-labelledby="rModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="mleModalLabel">Mensaje emergente</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ¿Está seguro de regresar a la página principal? Los datos no se guardarán
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <a href="../Login.html" class="btn btn-primary" onclick="cerrar()">Cerrar Sesion</a>
+        <!-- mano activa porfa el puerto 8,1k-->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="../../Js/bootstrap.min.js"></script>
+
+
+</html>

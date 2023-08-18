@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro usuario</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="shortcut icon" href="../../img/249187.png">
+    <script src="../../Js/login2.js"></script>
+</head>
+<script>iniciar()</script>
+
+<body class="bg-dark" onload="planes_registrados_anterior()">
+
+
+    <div class="container pt-3">
+        <div class="text-center fs-1 text-white"><b> GymRack</b></div>
+        <div class="text-end fs-3  text-light text-a-secondary  ">
+
+        </div>
+        <div class="px-2"> <a href="../../html/administrador/Admin.html" class="btn btn-light" data-bs-toggle="modal"
+                data-bs-target="#Volver">Volver</a></div>
+        <!--border ; rounded-pill; para redondearlo-->
+    </div>
+    <div class="d-flex justify-content-end align-items-center ">
+        <div class="px-5 mx-5 "> <img src="../../img/gym5.png" height="300px" width="500px"> </div>
+        <div class=""> </div>
+
+
+
+        <form name="formulario" id="formulario" class="container  ">
+            <div class="container py-5   ps-4  px-5    mt-5   border ">
+
+
+                <!-- border-danger -->
+                <div class="row mt-5 mx-5 ">
+
+                    <div class="col-lg-6   col-md-6 col-sm-6 col-12 col-xl-6 text-white">
+
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="name" placeholder="Escriba el nombre completo"
+                            autocomplete="off" class="form-control rounded-pill" required />
+
+
+                    </div>
+                    <div class="col-lg-6  col-md-6 col-sm-6 col-12 col-xl-6 text-white">
+
+                        <!--El autocomplete off, es para que no te salga sugerencia de cosas que ya registraste-->
+                        <label for="direccion">Direccion</label>
+                        <input type="text" id="direccion" name="address" placeholder="Escriba la direccion completa"
+                            autocomplete="off" class="form-control rounded-pill" required />
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="row mt-4 mx-5">
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 col-xl-6 text-white ">
+
+                        <label for="correo">Correo Electronico</label>
+                        <input type="email" id="correo" name="email"
+                            placeholder="Escriba la direccion de correo Electronico" autocomplete="off"
+                            class="form-control rounded-pill" required />
+
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 col-xl-6 text-white ">
+
+                        <label for="telefono">Telefono o celular</label>
+                        <input type="text" id="telefono" name="phone"
+                            placeholder="Escriba el numero de telefono o celular" autocomplete="off"
+                            class="form-control rounded-pill" required />
+
+                    </div>
+
+                </div>
+
+
+                <div class="row mt-4 mx-5">
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12  col-xl-6 text-white py-2">
+
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" placeholder="Escriba la contraseña"
+                            required class="form-control rounded-pill" />
+
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 col-xl-6 text-white py-2 ">
+
+
+                        <label for="repetir">Repetir contraseña</label>
+                        <input type="password" id="repetir" placeholder="Repite la contraseña" required
+                            class="form-control rounded-pill" />
+
+                    </div>
+                </div>
+
+                <div class="row mx-5">
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 col-xl-6  py-2 ">
+                        <label class="text-white">Genero</label>
+                        <select class="form-control rounded-pill"  id="genero" required>
+                            <option class=""></option>
+                            <option value="Masculino" class="text-center">Masculino</option>
+                            <option value="Femenino" class="text-center">Femenino</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 col-xl-6  py-2 ">
+                        <label class="text-white">Plan de usuario</label>
+                        <select class="form-control rounded-pill text-center"  id="plan" required>
+                            <option></option>
+                        </select>
+                    </div>
+
+
+                </div>
+
+                <div class="row mt-4 mx-5">
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 col-xl-6 text-white py-2">
+
+                        <input type="checkbox" id="terminos" required />
+                        <label>Acepto los términos y condiciones</label>
+
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 col-xl-6 ">
+
+
+                        <input type="submit" value="Enviar 🏋️‍♂️" class="btn text-black btn-light rounded-pill">
+
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--Pie de pagina 
+  
+-->
+
+</body>
+
+
+<div class="modal fade" id="Volver" tabindex="-1" aria-labelledby="rModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="mleModalLabel">Mensaje emergente</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Está seguro de regresar? si no has enviado el registro, no se guardaran
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary"> <a href="../administrador/Admin.html">
+                        Aceptar</a></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="../../Js/bootstrap.min.js"></script>
+
+
+
+
+
+<!--data-bs-toggle="modal" data-bs-target="#modal-enviar-->
+<!--https://docs.google.com/spreadsheets/d/1P9DtflLNkdy6YxCz6z9Hc54HaNgbE7iZBk4Ti8zc6I0/edit?usp=sharing-->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css">
+
+<script src="../../Js/bootstrap.min.js"></script><!--Para los modales, el js-->
+
+<script src="../../Js/registro_user.js"></script>
+<script src="../../Js/planesMostrarUsuario.js"></script>
+
+</html>

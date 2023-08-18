@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Entrenador</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <script src="../../Js/registro_trainer.js"></script>
+    <script src="../../Js/login2.js"></script>
+    <link rel="shortcut icon" href="../../img/249187.png">
+</head>
+
+<script>iniciar()</script>
+
+<body class="bg-dark" onload="fechaNacimiento()">
+    <div class="container">
+        <div class="text-center fs-1 text-white"><b>GymRack</b></div>
+        <div class="px-2"> <a href="Admin.html" class="btn btn-light" data-bs-toggle="modal"
+            data-bs-target="#Volver">Volver</a></div>
+        <!--border ; rounded-pill; para redondearlo-->
+    </div>
+
+    <div class="d-flex justify-content-end align-items-center ">
+        <div class="px-5 mx-5 "> <img src="../../img/gym7.jpg" width="590px he" height="380px"> </div>
+
+
+        <form name="formulario" id="formulario" class="container  ">
+            <div class="container py-5     px-5    mt-5   border   "> <!-- border-danger -->
+                <div class="row mt-4 mx-5">
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 col-xl-6   text-white">
+
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="name" placeholder="Escriba el nombre completo"
+                            autocomplete="off" class="form-control rounded-pill" required/>
+
+
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 col-xl-6  text-white">
+
+                        <!--El autocomplete off, es para que no te salga sugerencia de cosas que ya registraste-->
+                        <label for="direccion">Direccion</label>
+                        <input type="text" id="direccion" name="address" placeholder="Escriba la direccion completa"
+                            autocomplete="off" class="form-control rounded-pill" required/>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="row mt-4 mx-5">
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 col-xl-6  text-white ">
+
+                        <label for="correo">Correo Electronico</label>
+                        <input type="email" id="correo" name="email"
+                            placeholder="Escriba la dirrecion de correo Electronico" autocomplete="off"
+                            class="form-control rounded-pill" required />
+
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 col-xl-6  text-white ">
+
+                        <label for="telefono">Telefono o celular</label>
+                        <input type="text" id="telefono" name="phone"
+                            placeholder="Escriba el numero de telefono o celular" autocomplete="off"
+                            class="form-control rounded-pill" required/>
+
+                    </div>
+
+                </div>
+
+
+                <div class="row mt-4 mx-5">
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 col-xl-6  text-white py-2">
+
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" placeholder="Escriba la contraseña"
+                            required class="form-control rounded-pill" />
+
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 col-xl-6  text-white py-2 ">
+
+
+                        <label for="repetir">Repetir contraseña</label>
+                        <input type="password" id="repetir" placeholder="Repite la contraseña" required
+                            class="form-control rounded-pill" />
+
+                    </div>
+                </div>
+
+
+                <div class="row mx-5">
+                    <!--
+padding:                 margin:
+px,py, pb, pt         mx,my,mb,mt
+si quieres, luego, tu haces una en boostrap , y yo te voy ayudando!
+                -->
+                    <div class=" col-lg-6 col-md-6 col-sm-6 col-12 col-xl-6  text-white py-2 ">
+                        <label for="edad">Fecha de nacimiento</label>
+                        <input class="text-black form-control" type="date" id="edad"  required />
+                        <!---->
+                    </div>
+
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 col-xl-6  text-white py-2">
+                        <label for="Especialidad">Especialidad</label>
+                        <input type="text" id="trato" placeholder="Escribe la Especialidad" autocomplete="off"
+                            class="form-control rounded-pill" required>
+                    </div>
+                </div>
+
+                <div class="row mx-5">
+                   
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 col-xl-6  text-white py-2">
+                        <label class="text-white">Genero</label>
+                        <select class="form-control rounded-pill"  id="genero" required>
+                            <option></option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 col-xl-6  text-white py-2">
+                    </div>
+                   
+                </div>
+
+
+                <div class="row mt-4 mx-5 ">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 col-xl-6  ">
+                        <input type="submit" value="Registrar 🏋️" class="btn text-black btn-light rounded-pill">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+
+<div class="modal fade" id="Volver" tabindex="-1" aria-labelledby="rModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="mleModalLabel">Mensaje emergente</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Está seguro de regresar? si no has enviado el registro, no se guardaran
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary"> <a href="../administrador/Admin.html">
+                        Aceptar</a></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../../Js/bootstrap.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css">
+
+</html>

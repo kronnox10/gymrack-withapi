@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generar reporte</title>
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <script src="../../Js/login2.js"></script>
+  <script src="../../Js/bootstrap.js"></script>
+  <link rel="shortcut icon" href="../../img/249187.png">
+
+</head>
+<script>iniciar()</script>
+
+<body class="bg-light"><!---->
+  <header class="bg-dark bg-opacity-75">
+    <div class="row py-3 fs-3">
+      <div class="col-lg-4 text-white ps-5">
+        GymRack
+      </div>
+      <div class="col-lg-8  text-end fs-5 text-white pe-5">
+        <a class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#RModal">Cerrar Sesion</a>
+      </div>
+
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg  bg-orange px-5 fs-5 ">
+      <div class="container-fluid">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- <a class="  navbar-brand mx-4 px-4 nav-link active" href="Registraruser.html">Registrar usuario</a>-->
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown px-5 mx-5"><!--Barra  de nav despregable-->
+              <a class="nav-link dropdown-toggle active mx-3" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Usuarios
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="Buscarusu.html">Buscar usuario</a></li>
+                <li><a class="dropdown-item" href="Registraruser.html">Registrar usuario</a></li>
+              </ul>
+            </li>
+
+
+            <li class="nav-item dropdown mx-5 px-5"><!--Barra  de nav despregable-->
+              <a class="nav-link dropdown-toggle active mx-4" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Enviar reporte
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="estadisticas.html" onclick="">Estadisticas</a></li>
+                <li><a class="dropdown-item" href="admin-enviar-pdfs.html" onclick="">Enviar reporte</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item mx-5 px-2¿5 ">
+              <a class="nav-link active " href="admin-planes.html">Planes</a>
+            </li>
+            <li class="nav-item dropdown px-5  mx-5"><!--Barra  de nav despregable-->
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Entrenador
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="admin-buscarE.html">Buscar entrenador</a></li>
+                <li><a class="dropdown-item" href="RegistrarE.html">Registrar entrenador</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <hr class="text-black">
+  </header>
+
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-5 col-lg-5" onclick="pdf_estadisticas_Entrenador_y_sus_Usuarios()">
+        <a class="btn">
+          <img src="../../img/pdfGymrack.png" class="img-fluid">
+          <p>
+            <h1>Generar PDF de los entrenadores con mas usuarios</h1>
+          </p>
+        </a>
+      </div>
+      <div class="col-xl-5 col-lg-5" onclick="pdf_asistencia()">
+        <a class="btn">
+          <img src="../../img/pdfGymrack2.png" class="img-fluid">
+          <p>
+            <h1>Generar PDF asistencias</h1>
+          </p>
+        </a>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-xl-5 col-lg-5">
+        <a class="btn" onclick="pdf_genero()">
+          <img src="../../img/pdfGymrack2.png" class="img-fluid">
+          <p>
+            <h1>Generar PDF generos</h1>
+          </p>
+        </a>
+      </div>
+      <div class="col-xl-5 col-lg-5" onclick="pdf_entrenador()">
+        <a class="btn">
+          <img src="../../img/pdfGymrack.png" class="img-fluid">
+          <p>
+            <h1>Generar PDF con la tabla de entrenadores</h1>
+          </p>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+</body>
+
+<div class="modal fade" id="RModal" tabindex="-1" aria-labelledby="rModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="mleModalLabel">Mensaje emergente</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ¿Está seguro de regresar a la página principal? Los datos no se guardarán
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <a href="../Login.html" class="btn btn-primary" onclick="cerrar()">Cerrar Sesion</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <canvas id="grafica1"></canvas>
+</div>
+
+
+<script src="../../Js/bootstrap.min.js"></script>
+
+<!--Axios-->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<!--Libreria char para grafica-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+
+<!--Script para PDF-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/jspdf"></script>
+<script src="https://unpkg.com/jspdf-autotable"></script>
+
+<!--Script normal-->
+<script src="../../Js/Estadistica.js"></script>
+
+</body>
+
+</html>

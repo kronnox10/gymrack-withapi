@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrenador</title>
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <script src="../../Js/login2.js"></script>
+  <script src="../../Js/bootstrap.js"></script>
+  <link rel="shortcut icon" href="../../img/249187.png">
+</head>
+<script></script>
+
+<script>iniciar()</script>
+
+
+
+<body class="bg-light">
+  <header class="bg-dark bg-opacity-75">
+    <div class="container">
+      <div class="row pt-3">
+        <div class="tittle text-light col-lg-2 col-md-6 col-sm-6 col-6 col-xl-2">
+          <H1>
+            <b>¡GymRack!</b>
+          </H1>
+        </div>
+        <div class="col-lg-8 col-md-4 col-sm-4 col-4 col-xl-8"></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-2 col-xl-2 ">
+          <a class="btn-outline-light text-start ms-3 mt-3 btn fs-6 text-decoration-none" data-bs-toggle="modal"
+            data-bs-target="#RModal">Cerrar Sesion</a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="ms-5 me-5 ">
+
+    <div class="row "><!-- -->
+      <nav class="navbar navbar-expand-lg  bg-orange px-5 fs-5 ">
+        <div class="container-fluid">
+          <a class="  navbar-brand mx-5 px-4 nav-link active" href="listuser.html">Listas de usuarios</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active mx-5 px-5" aria-current="page" href="usertrain-valo.html">Valoraciones</a>
+              </li>
+           
+                <a class="nav-link active px-5 mx-5" href="trainer-rutina.html">Registrar Rutina</a>
+              </li>
+              <li class="nav-item mx-5 px-5">
+                <a class="nav-link active " href="Estadistica-Asistencia.html">Ver estadisticas</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+
+
+  <div class="container mt-5">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <div class="row col-12 mb-2">
+        <h3>Opciones de usuario</h3>
+      </div>
+      <button class="nav-link  btn btn-success" id="nav-estadisticas-tab" data-bs-toggle="tab"
+        data-bs-target="#nav-nuevo" type="button" role="tab" aria-controls="nav-nuevo" aria-selected="false"
+        onclick="lista()">Lista de usuario</button>
+
+
+      <button class="nav-link  btn btn-success" id="nav-listado-tab" data-bs-toggle="tab" data-bs-target="#nav-soli"
+        type="button" role="tab" aria-controls="nav-soli" aria-selected="false"
+        onclick="revisar_solicitudes()">Solicitudes</button>
+
+
+
+      <button class="nav-link  btn btn-success" id="nav-aceptada-tab" data-bs-toggle="tab"
+        data-bs-target="#nav-aceptada" type="button" role="tab" aria-controls="nav-aceptada" aria-selected="true"
+        onclick="usuarios_aceptados()">Mis usuarios</button>
+
+    </div>
+
+
+
+    <div id="ocultar">
+
+      <div class="tab-pane fade active " id="nav-nuevo" role="tabpanel">
+        <table id="tablacontacs" class="table table-striped table-hover" style="width:100%"
+          aria-labelledby="nav-estadisticas-tab">
+          <thead>
+            <tr>
+              <th><b>id</b></th>
+              <th><b>nombre</b></th>
+              <th><b>correo</b></th>
+              <th><b>estado</b></th>
+            </tr>
+          </thead>
+
+        </table>
+      </div>
+
+    </div>
+
+    <div id="ocultar2">
+      <div class="tab-pane fade active " id="nav-soli" role="tabpanel" aria-labelledby="nav-listado-tab">
+        <table id="tablaSolicitud" class=" table table-striped table-hover" style="width:100%">
+          <thead>
+            <tr>
+              <th><b>Nombre</b></th>
+              <th><b>Estado</b></th>
+              <th><b>Opcion</b></th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+
+    <div id="ocultar3">
+      <div class="tab-pane fade active " id="nav-aceptada" role="tabpanel" aria-labelledby="nav-aceptada-tab">
+        <table id="tablaAceptada" class=" table table-striped table-hover" style="width:100%">
+          <thead>
+            <tr>
+              <th><b>id</b></th>
+              <th><b>nombre</b></th>
+              <th><b>estado</b></th>
+              <th><b>correo</b></th>
+
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</body>
+
+<div class="modal fade" id="RModal" tabindex="-1" aria-labelledby="rModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="mleModalLabel">Mensaje emergente</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ¿Está seguro de regresar a la página principal? Los datos no se guardarán
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <a href="../Login.html" class="btn btn-primary" onclick="cerrar()">Cerrar Sesion</a>
+        <!-- mano activa porfa el puerto 8,1k-->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="../../Js/bootstrap.min.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<!-- <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css"> -->
+<script src="../../Js/registro.js"></script>
+<script src="../../Js/bootstrap.min.js"></script>
+
+
+
+<!--Link para el datatable-->
+<link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
+
+<!--Script para poner poner el datable en español-->
+<script type="text/javascript" src="../../Js/EditarTable.js"></script>
+
+</html>

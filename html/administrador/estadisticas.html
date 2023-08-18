@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generar reporte</title>
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <script src="../../Js/login2.js"></script>
+  <script src="../../Js/bootstrap.js"></script>
+  <link rel="shortcut icon" href="../../img/249187.png">
+
+</head>
+<script>iniciar()</script>
+
+<body class="bg-light"><!---->
+  <header class="bg-dark bg-opacity-75">
+    <div class="row py-3 fs-3">
+      <div class="col-lg-4 text-white ps-5">
+        GymRack
+      </div>
+      <div class="col-lg-8  text-end fs-5 text-white pe-5">
+        <a class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#RModal">Cerrar Sesion</a>
+      </div>
+
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg  bg-orange px-5 fs-5 ">
+      <div class="container-fluid">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- <a class="  navbar-brand mx-4 px-4 nav-link active" href="Registraruser.html">Registrar usuario</a>-->
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown px-5 mx-5"><!--Barra  de nav despregable-->
+              <a class="nav-link dropdown-toggle active mx-3" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Usuarios
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="Buscarusu.html">Buscar usuario</a></li>
+                <li><a class="dropdown-item" href="Registraruser.html">Registrar usuario</a></li>
+              </ul>
+            </li>
+
+
+            <li class="nav-item dropdown mx-5 px-5"><!--Barra  de nav despregable-->
+              <a class="nav-link dropdown-toggle active mx-4" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Enviar reporte
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="estadisticas.html" onclick="">Estadisticas</a></li>
+                <li><a class="dropdown-item" href="admin-enviar-pdfs.html" onclick="">Enviar reporte</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item mx-5 px-2¿5 ">
+              <a class="nav-link active " href="admin-planes.html">Planes</a>
+            </li>
+            <li class="nav-item dropdown px-5  mx-5"><!--Barra  de nav despregable-->
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Entrenador
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="admin-buscarE.html">Buscar entrenador</a></li>
+                <li><a class="dropdown-item" href="RegistrarE.html">Registrar entrenador</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <hr class="text-black">
+  </header>
+
+  <!--                    -->
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-6" id="g1">
+        <canvas id="grafica1" style="width: 310px; height: 220px;" class="ps-5 pe-5 pt-3" data-bs-toggle="modal"
+          data-bs-target="#RModal2" ></canvas>
+      </div>
+
+      <div class="col-lg-6 " id="g2">
+        <canvas id="grafica2" style="width: 300px; height: 220px;" class="ps-5 pe-5 pt-3" data-bs-toggle="modal"
+          data-bs-target="#RModal3"></canvas>
+      </div>
+
+      <div class="col-lg-6" id="g3">
+        <canvas id="grafica3" style="width: 300px; height: 220px;" class="ps-5 pe-5 pt-3" data-bs-toggle="modal"
+          data-bs-target="#RModal4"></canvas>
+      </div>
+
+      <div class="col-lg-6" id="g4">
+        <canvas id="grafica4" style="width: 300px; height: 220px;" class="ps-5 pe-5 pt-3" data-bs-toggle="modal"
+          data-bs-target="#RModal5"></canvas>
+      </div>
+
+    </div>
+  </div>
+
+
+</body>
+
+<!--  /---------------------------------------------------------------------Modales\------------------------------------------------------------------>
+<!--  /---------------------------------------------------------------------Modales\------------------------------------------------------------------>
+<!--  /---------------------------------------------------------------------Modales\------------------------------------------------------------------>
+ 
+<!--Modal 1-->
+<div class="modal fade" id="RModal" tabindex="-1" aria-labelledby="rModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="mleModalLabel">Mensaje emergente</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ¿Está seguro de regresar a la página principal? Los datos no se guardarán
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <a href="../Login.html" class="btn btn-primary" onclick="cerrar()">Cerrar Sesion</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Modal 2-->
+<div class="modal fade" id="RModal2" tabindex="-1" aria-labelledby="rModalLabel2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="mleModalLabel">Estadistica de asistencia</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="col-lg-12">
+          <div>
+            <div>
+              <p>La grafica a continuacion:</p>
+            </div>
+  
+  
+          </div>
+          <div>
+            <ul>
+              <li>Nos permite ver la asistencia que tienen los clientes en un mes, en diferentes horas del dia</li>
+              <li>En la grafica, en el eje x , sale el numero de asistencia, y en el eje y podemos ver una horas diferentes</li>
+              <li>Podemos observar cual ha sido la hora que mas asistencia de usuarios(la frecuencia por hora) donde los usuarios suelen asistir</li>
+  
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div>
+            <div>
+              <p>De acuerdo a la grafica a continuacion, podemos observar que:</p>
+            </div>
+  
+  
+          </div>
+          <div>
+            <ul>
+              <li><b id="NombrePersona"></b> las personas suelen ir al gimnasio</li>
+              con un total de <b id="TotalAsistencia"></b> asistencias
+            </ul>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="modal-footer">
+        
+        <a href="../Login.html" class="btn btn-primary" >Cerrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Modal 3-->
+<div class="modal fade" id="RModal3" tabindex="-1" aria-labelledby="rModalLabel3" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="mleModalLabel">Estadistica de total de genero</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-6">
+            <div id="si"  >
+              <div>
+                <p>De acuerdo a la grafica a continuacion, podemos observar que:</p>
+              </div>
+
+
+            </div>
+            <div>
+              <ul>
+                <li>El <b id="porcHombre"></b>% de las personas que asisten al gimnasio son hombres</li>
+                Esto quiere decir la cantidad de hombre(s) es: <b id="cantHombre"></b>
+              </ul>
+            </div>
+          </div>
+
+
+          <div class="col-lg-6">
+            <div>
+              <div>
+                <p>De acuerdo a la grafica a continuacion, podemos observar que:</p>
+              </div>
+
+
+            </div>
+            <div>
+              <ul>
+                <li>El <b id="porcMujer"></b>% de las personas que asisten al gimnasio son mujeres</li>
+                Esto quiere decir la cantidad de mujer(es) es: <b id="cantMujer"></b>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="modal-footer">
+        
+        <a href="../Login.html" class="btn btn-primary" >Cerrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--Modal 4-->
+<div class="modal fade" id="RModal4" tabindex="-1" aria-labelledby="rModalLabel3" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="mleModalLabel">Estadistica de asistencia en un mes</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-6">
+            <div id="si" >
+              <div>
+                <p>A continuacion podemos observar:</p>
+              </div>
+
+
+            </div>
+            <div>
+              <ul>
+                <li>En el eje x, se encuentran los 7 días de la semana</li>
+                <li>En el eje y, se encuentra se encuentra el numero de asistencia en general</li>
+                <li>La grafica nos muestra el dia donde los usuarios mas asisten en un mes</li>
+              </ul>
+            </div>
+          </div>
+
+
+          <div class="col-lg-6">
+            <div>
+              <div>
+                <p>De acuerdo a la grafica a continuacion, podemos observar que:</p>
+              </div>
+
+
+            </div>
+            <div>
+              <ul>
+                <li>El/los dia(s) en el que hay mas asistencias de usuarios es el/los dia(s)<b id="MasAsistencia"></b></li>
+                <li>El/los dia(s) en el que hay menos asistencias de usuarios es el/los dia(s)<b id="MenosAsistencia"></b></li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="modal-footer">
+        
+        <a href="../Login.html" class="btn btn-primary" >Cerrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Modal 5-->
+<div class="modal fade" id="RModal5" tabindex="-1" aria-labelledby="rModalLabel3" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="mleModalLabel">Estadistica de asistencia en un mes</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-6">
+            <div id="si" >
+              <div>
+                <p>A continuacion podemos observar:</p>
+              </div>
+
+
+            </div>
+            <div>
+              <ul>
+                <li>El grafico tiene cuatro colores diferentes de los 4 planes disponible</li>
+                <li>Entre mayor sea la cantidad de usuarios que haya comprado el plan, mayor sera el area del plan</li>
+              </ul>
+            </div>
+          </div>
+
+
+          <div class="col-lg-6">
+            <div>
+              <div>
+                <p>De acuerdo a la grafica a continuacion, podemos observar que:</p>
+              </div>
+
+
+            </div>
+            <div>
+              <ul>
+                <li>El/los plan(es) mas comprado es/son:</li>
+                <b id="MAXPLAN"></b>
+                <li>La cantidad es de: <b id="MAXCANTPLAN"></b></li>
+
+          
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="modal-footer">
+        
+        <a href="../Login.html" class="btn btn-primary" >Cerrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+-->
+
+
+
+<script src="../../Js/bootstrap.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="../../Js/Estadistica.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+
+<script>grafica_Asistencia_consulta()</script>
+<script>estadisticas2()</script>
+<script>estadisticas_por_mes()</script>
+<script>estadisticas_planes()</script>
+
+<script></script><!--Script para el plan-->
+
+
+
+<!--DATATABLE JS-->
+<script type="text/javascript" src="../../datatables_into/datatables.min.js"></script>
+<script type="text/javascript" src="../../Js/EditarTable.js"></script>
+
+
+
+</body>
+
+<!--
+        <div class="HeaderRegistrar"><b>GymRack</b></div>
+    -->
+
+
+
+
+</html>
