@@ -1,0 +1,40 @@
+[
+    {
+        "username": "jesus",
+        "password": "0000",
+        "privilegios": {
+            "modulousuario": false,
+            "moduloadmin": false,
+            "moduloentrenador": true
+        }
+    },
+    {
+        "username": "henry",
+        "password": "0000",
+        "privilegios": {
+            "modulousuario": false,
+            "moduloadmin": true,
+            "moduloentrenador": false
+        }
+    },
+    {
+        "username": "jorge",
+        "password": "0000",
+        "privilegios": {
+            "modulousuario": true,
+            "moduloadmin": false,
+            "moduloentrenador": false
+        }
+        
+    },
+    {
+        "username": "admin",
+        "password": "0000",
+        "privilegios": {
+            "modulousuario": false,
+            "moduloadmin": true,
+            "moduloentrenador": false
+        }
+    }
+]
+
